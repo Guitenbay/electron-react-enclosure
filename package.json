@@ -1,0 +1,16 @@
+{
+  "name": "tsystem-electron",
+  "version": "1.0.0",
+  "description": "Windows App for TSystem",
+  "main": "main.js",
+  "scripts": {
+    "start-electron": "cross-env NODE_ENV=development electron .",
+    "start-electron-prod": "electron ."
+  },
+  "author": "Guitenbay",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "electron": "^9.1.1"
+  }
+}
