@@ -5,13 +5,45 @@
   "main": "main.js",
   "scripts": {
     "start-electron": "cross-env NODE_ENV=development electron .",
-    "start-electron-prod": "electron ."
+    "start-electron-prod": "electron .",
+    "build-electron": "electron-builder"
+  },
+  "build": {
+    "appId": "com.chenxi.tsystem",
+    "productName": "教师综合考察系统",
+    "copyright": "Copyright © 2020",
+    "extends": null,
+    "directories": {
+      "output": "build-electron"
+    },
+    "files": [
+      "./dist/**/*",
+      "./main.js",
+      "./package.json"
+    ],
+    "win": {
+      "icon": "./favicon_256.ico",
+      "artifactName": "${productName}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "runAfterFinish": true,
+      "installerIcon": "./favicon_256.ico", 
+      "uninstallerIcon": "./favicon_256.ico",
+      "installerHeaderIcon": "./dist/icons/icon-128x128.png",
+      "shortcutName": "教师综合考察系统"
+    }
   },
   "author": "Guitenbay",
   "license": "ISC",
   "devDependencies": {
     "cross-env": "^7.0.2",
-    "electron": "^9.1.1"
+    "electron": "^9.1.1",
+    "electron-builder": "^22.7.0"
   },
   "dependencies": {
     "dotenv": "^8.2.0"
